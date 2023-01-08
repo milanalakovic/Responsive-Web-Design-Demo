@@ -380,7 +380,7 @@ nav {
 .tabsSection {
     display: flex;
     flex-direction: row;
-    padding: 10em 7em;
+    padding: 10% 20%;
     background-color: $backgroundGray;
 
 
@@ -546,6 +546,7 @@ nav {
 
 
 
+
 @media only screen and (max-width :1500px) {
 
     nav {
@@ -609,6 +610,7 @@ nav {
     background-image: url(../images/customersBackground.png);
     background-size: cover;
     background-repeat: no-repeat;
+    padding: 10%;
 
     .customersTitle {
         max-width: 30%;
@@ -664,7 +666,7 @@ nav {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 4.3em 10em 13em 10em;
+    padding: 10% 20%;
 
     .formImg {
         max-width: 50%;

@@ -315,7 +315,7 @@ nav .contactButton button.btn {
 .tabsSection {
   display: flex;
   flex-direction: row;
-  padding: 10em 7em;
+  padding: 10% 20%;
   background-color: #e9e7e7;
 }
 .tabsSection .tabs {
@@ -491,6 +491,7 @@ nav .contactButton button.btn {
   background-image: url(../images/customersBackground.png);
   background-size: cover;
   background-repeat: no-repeat;
+  padding: 10%;
 }
 .customersWrapper .customersTitle {
   max-width: 30%;
@@ -541,7 +542,7 @@ nav .contactButton button.btn {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 4.3em 10em 13em 10em;
+  padding: 10% 20%;
 }
 .formWrapper .formImg {
   max-width: 50%;
