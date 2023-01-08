@@ -1,0 +1,1734 @@
+@import 'fonts';
+@import 'vars';
+@import 'mixins';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: roboto;
+}
+
+
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: $backgroundGray;
+
+    ul {
+        display: flex;
+        flex-direction: row;
+        list-style-type: none;
+        padding-left: 4.3em;
+
+
+        .home a {
+            color: black;
+            font-weight: bold;
+
+        }
+
+        li {
+            padding: 4em;
+
+            &:not(:first-child):hover a {
+                text-decoration: underline;
+
+            }
+
+            a {
+                text-decoration: none;
+                color: #515155;
+                font-size: 1.5em;
+            }
+        }
+    }
+
+    .contactButton {
+        margin-left: auto;
+
+        button {
+            position: relative;
+            padding: 1.5em 2em;
+            border: none;
+            outline: none;
+            background-color: transparent;
+            cursor: pointer;
+            font-size: 1.2em;
+            margin-right: 8em;
+
+        }
+
+        .btn::after,
+        .btn::before {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 25%;
+            height: 25%;
+            border: 2px solid;
+            transition: all 0.7s ease;
+            border-radius: 2px;
+        }
+
+        button.btn::after {
+            bottom: 0;
+            right: 0;
+            border-top-color: transparent;
+            border-left-color: transparent;
+            border-bottom-color: $borderGray;
+            border-right-color: $borderGray;
+        }
+
+        button.btn::before {
+            top: 0;
+            left: 0;
+            border-bottom-color: transparent;
+            border-right-color: transparent;
+            border-top-color: $borderGray;
+            border-left-color: $borderGray;
+        }
+
+        button.btn:hover:after,
+        button.btn:hover:before {
+            width: 100%;
+            height: 100%;
+        }
+
+        button.btn {
+            color: #1d7765;
+        }
+
+
+    }
+}
+
+.headerWrapper {
+    background-image: url(../images/Scribble\ Dark\ header.png);
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: bottom;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 3em 8em 5em 8em;
+    background-color: $backgroundGray;
+
+    img {
+        max-width: 100%;
+    }
+
+    .headerTravel {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        h1 {
+            font-size: 4.2em;
+            color: $black;
+        }
+
+        p {
+            font-size: 1.5em;
+        }
+
+        .reserveBtn {
+            height: 3em;
+            width: 12em;
+            background-color: $black;
+            color: $backgroundGray;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            font-weight: bold;
+            transition: ease-out 0.4s;
+        }
+
+        .reserveBtn:hover {
+            cursor: pointer;
+            color: #d1af64;
+
+        }
+    }
+
+}
+
+.mainDescription {
+    background-image: url(../images/Scribble\ Light\ main.png);
+    background-color: $black;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+
+    .mainDescriptionWrapper {
+        width: 50%;
+        margin: auto;
+        text-align: center;
+        padding: 2.5em;
+
+        h1 {
+            color: $backgroundGray;
+            font-size: 3.5em;
+        }
+
+        p {
+            color: $backgroundGray;
+            padding: 2em;
+            font-size: 1.3em;
+        }
+
+        button {
+            height: 3em;
+            width: 12em;
+            background-color: $black;
+            color: $backgroundGray;
+            border-radius: 0.5em;
+            border: 3px solid $backgroundGray;
+            font-size: 1em;
+            font-weight: bold;
+            transition: ease-out 0.4s;
+
+            &:hover {
+                cursor: pointer;
+                color: #d1af64;
+                border: 3px solid #d1af64;
+            }
+        }
+    }
+}
+
+.offers {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-image: url(../images/Scribble\ Dark\ main.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: $backgroundGray;
+    padding: 140px 0;
+
+    img {
+        transition: 1s ease;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    .underline {
+        background-color: $black;
+        height: 3px;
+        width: 50px;
+        margin: 35px 0;
+    }
+
+    .offer {
+        max-width: 370px;
+        margin: 30px;
+
+
+
+    }
+
+    h1 {
+        width: 230px;
+        font-size: 2.2em;
+        padding-bottom: 40px;
+    }
+
+    p {
+        font-size: 1.3em;
+        text-align: justify;
+    }
+}
+
+.airplane {
+    background-image: url(../images/Scribble\ Dark\ airplane.png);
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    background-position-x: 5em;
+    @include flex;
+    flex-direction: column;
+    padding: 15em 0 7em 0;
+    background-color: $backgroundGray;
+
+    img {
+        padding-bottom: 2.5em;
+        position: relative;
+        animation: fly 5s ease-in-out infinite;
+
+    }
+
+    @keyframes fly {
+        0% {
+            top: 0px;
+        }
+
+        50% {
+            top: -100px
+        }
+
+        100% {
+            to: 0px;
+        }
+    }
+
+
+
+    h1 {
+        font-size: 4em;
+        padding-bottom: 2em;
+
+        span {
+            border-bottom: 4px solid black;
+        }
+    }
+
+    p {
+        font-size: 1.4em;
+        font-weight: 900;
+    }
+}
+
+.arrow {
+    width: 100px;
+    height: 30px;
+    display: flex;
+    align-self: flex-end;
+    padding-top: 0.2em;
+}
+
+.arrow:before {
+    content: "";
+    background: currentColor;
+    width: 15px;
+    clip-path: polygon(0 10px, calc(100% - 15px) 10px, calc(100% - 15px) 0, 100% 50%, calc(100% - 15px) 100%, calc(100% - 15px) calc(100% - 10px), 0 calc(100% - 10px));
+    animation: moveArrow 1.8s infinite linear;
+}
+
+@keyframes moveArrow {
+
+    90%,
+    100% {
+        flex-grow: 1
+    }
+}
+
+.mountains {
+    display: flex;
+    flex-direction: row;
+    padding: 9em 7.3em 3.3em 5.4em;
+    background-color: #c4c4c4;
+
+
+    .mainImgWrapper {
+        width: 50%;
+        padding-left: 4em;
+
+        .mainMountainImg {
+            max-width: 100%;
+        }
+    }
+
+    .mountain {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        padding-left: 2em;
+
+        .smallMountainImg {
+            img {
+                max-width: 100%;
+            }
+        }
+    }
+}
+
+.mountainDescription {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 2em;
+    padding-top: 4.6em;
+
+    h1 {
+        max-width: 230px;
+        font-size: 2.3em;
+        text-decoration: underline;
+    }
+
+    .textTop {
+        padding-bottom: 1em;
+    }
+
+    p {
+        font-size: 1.1em;
+    }
+}
+
+.descriptionDetails {
+    max-width: 370px;
+    padding-left: 50px;
+    text-align: justify;
+}
+
+
+
+.tabsSection {
+    display: flex;
+    flex-direction: row;
+    padding: 10em 7em;
+    background-color: $backgroundGray;
+
+
+
+    .tabs {
+        list-style: none;
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 2em;
+        width: 30em;
+        padding-top: 2em;
+
+    }
+
+    .tabs li {
+        font-size: 2em;
+        font-weight: bold;
+        color: $backgroundGray;
+        cursor: pointer;
+        position: relative;
+
+    }
+
+    .tabs li::after {
+        content: '';
+        position: absolute;
+        bottom: -20%;
+        left: -3%;
+        width: 0%;
+        height: 3px;
+        background: $backgroundGray;
+        border-radius: 30px;
+        transition: width 0.8s ease;
+    }
+
+    .tabs li.active::after {
+        width: 100%;
+    }
+}
+
+.container {
+    position: relative;
+}
+
+.content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.content.active {
+    display: block;
+    padding-bottom: 1em;
+    background-color: $black;
+    border-bottom-left-radius: 1.4em;
+    border-bottom-right-radius: 1.4em;
+}
+
+
+.content img {
+    width: 100%;
+    animation: fade 1s ease;
+}
+
+.content p {
+    font-size: 1.5rem;
+    text-align: center;
+    width: 70%;
+    color: $backgroundGray;
+    padding-top: 1.5em;
+    margin: auto;
+}
+
+.tabsPart {
+    background-color: $black;
+    border-radius: 1.4em;
+}
+
+.tabsDescription {
+    max-width: 40%;
+    padding-right: 6em;
+    margin-right: 10em;
+    color: #232323;
+
+    h1 {
+        padding-bottom: 80px;
+        font-size: 2.5em;
+    }
+
+    h3 {
+        font-size: 2em;
+        padding-bottom: 0.7em;
+
+    }
+
+    p {
+        font-size: 1.2em;
+        text-align: justify;
+    }
+
+    .descTop {
+        padding-bottom: 1em;
+    }
+}
+
+.plusList {
+    display: flex;
+    flex-direction: row;
+    padding: 7em;
+    justify-content: space-around;
+
+    img {
+        max-width: 100%;
+    }
+
+    .plusdescription {
+
+        h1 {
+            padding-bottom: 100px;
+            font-size: 3em
+        }
+    }
+
+}
+
+
+
+.line {
+    display: flex;
+    flex-direction: row;
+    width: 750px;
+    justify-content: space-between;
+    border-top: 2px solid black;
+    padding: 1.3em;
+    font-size: 1.1em;
+    transition: 0.2s;
+
+    &:hover {
+        background-color: #c4c4c4;
+    }
+
+    .plus {
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+
+}
+
+.lastLine {
+    border-bottom: 2px solid black;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+@media only screen and (max-width :1500px) {
+
+    nav {
+        ul {
+            padding-left: 0;
+        }
+    }
+
+    .headerWrapper {
+        padding-left: 5em;
+
+        .headerTravel {
+
+
+            h1 {
+                font-size: 4em;
+
+            }
+
+        }
+    }
+
+    .mountainDescription {
+        padding-top: 4.4em;
+
+        h1 {
+            font-size: 2.2em;
+        }
+
+        p {
+            font-size: 1em;
+        }
+    }
+
+    .tabsDescription {
+        margin-right: 8em;
+    }
+
+
+    .plusList {
+
+        .plusdescription {
+
+            h1 {
+                padding-bottom: 90px;
+                max-width: 15em;
+                text-align: center;
+            }
+        }
+
+    }
+
+    .line {
+        width: 600px;
+    }
+}
+
+.customersWrapper {
+    @include flex;
+    flex-direction: column;
+    background-image: url(../images/customersBackground.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    .customersTitle {
+        max-width: 30%;
+        text-align: center;
+        margin: auto;
+        padding: 3.4em 0;
+        color: $black;
+
+        h1 {
+            font-size: 3em;
+        }
+    }
+
+    .customers {
+        @include flex;
+        flex-direction: row;
+        padding: 0 7em 6em 7em;
+
+        .customer {
+            width: 33%;
+            border: 2px solid $black;
+            border-radius: 7px;
+            margin: 10px;
+            @include flex;
+            flex-direction: column;
+            padding: 4em 2em;
+            transition: 1s;
+
+            &:hover {
+                background-color: #c4c4c4;
+            }
+
+            img {
+                padding-bottom: 40px;
+            }
+
+            h4 {
+                padding-bottom: 30px;
+                font-size: 1.4em;
+            }
+
+            p {
+                font-size: 1.2em;
+                text-align: center;
+            }
+        }
+    }
+
+}
+
+.formWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4.3em 10em 13em 10em;
+
+    .formImg {
+        max-width: 50%;
+        padding-left: 2em;
+
+        img {
+            width: 100%;
+        }
+    }
+
+}
+
+
+
+.formAndTitle {
+
+    h1 {
+        font-size: 3em;
+        text-align: center;
+        padding-bottom: 1em;
+    }
+
+    input::placeholder {
+        color: black;
+        font-size: 1.3em;
+    }
+
+    input {
+        margin: 13px;
+        height: 60px;
+        width: 450px;
+        border: 2px solid black;
+        border-radius: 5px;
+        padding-left: 1.3em;
+    }
+
+    input:focus::placeholder {
+        color: transparent;
+    }
+
+    textarea {
+        margin: 13px;
+        width: 450px;
+        border: 2px solid black;
+        border-radius: 5px;
+        padding-left: 1.3em;
+        padding-top: 2em;
+    }
+
+    textarea::placeholder {
+        color: black;
+        font-size: 1.3em;
+    }
+
+    textarea:focus::placeholder {
+        color: transparent;
+    }
+
+    .subBtn {
+        padding-top: 1.5em;
+
+        input {
+            background-color: $black;
+            color: $backgroundGray;
+            border: none;
+            border-radius: 2px;
+            font-size: 1.4em;
+            padding-left: 0;
+        }
+    }
+}
+
+.quickLinks {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-image: url(../images/Scribble\ Dark\ Footer.png);
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    background-position-x: bottom;
+    padding: 7.5em 10em 5em 10em;
+    background-color: #c4c4c4;
+
+    h1 {
+        font-size: 3.5em;
+        color: $black;
+    }
+
+    .links {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        justify-content: space-between;
+        padding-left: 3.5em;
+
+        .link {
+            display: flex;
+            flex-direction: row;
+        }
+
+        h3 {
+            font-size: 2.5em;
+            color: $black;
+            padding-bottom: 1.5em;
+
+        }
+
+        ul {
+            list-style-type: none;
+            padding-right: 2em;
+
+            li {
+                padding: 1.5em 2em 1.5em 1em;
+
+                &:hover a {
+                    color: $backgroundGray;
+                }
+            }
+        }
+
+        a {
+            text-decoration: none;
+            color: $black;
+            font-size: 1.3em;
+        }
+
+        p {
+            font-size: 1.2em;
+            padding-top: 2.5em;
+            padding-left: 2em;
+        }
+    }
+}
+
+
+
+@media only screen and (max-width :1350px) {
+
+    .headerWrapper {
+
+        .headerTravel {
+            padding-right: 2.5em;
+
+            h1 {
+                font-size: 2.6;
+            }
+
+            p {
+                font-size: 1.1em;
+                padding: 1em 0;
+            }
+        }
+    }
+
+    .offers {
+        background-repeat: repeat;
+        background-size: contain;
+    }
+
+
+    .airplane {
+        background-position-x: 4em;
+        padding: 10em 0 7em 0;
+    }
+
+    .mountainDescription {
+        padding-top: 4.3em;
+
+        h1 {
+            font-size: 2em;
+        }
+
+        p {
+            font-size: 1em;
+        }
+    }
+
+    .tabsDescription {
+        margin-right: 6em;
+    }
+
+
+    .plusList {
+        padding: 6em;
+
+        img {
+            padding-left: 1em;
+        }
+
+
+        .plusdescription {
+
+            h1 {
+                padding-bottom: 70px;
+                font-size: 2em;
+                text-align: center;
+            }
+        }
+
+    }
+
+    .line {
+        width: 500px;
+    }
+
+    .formAndTitle {
+
+        h1 {
+            font-size: 2.9em;
+            padding-bottom: 0.9em;
+        }
+
+        input {
+            width: 400px;
+        }
+
+        textarea {
+            width: 400px;
+        }
+    }
+
+    .quickLinks {
+        padding: 5em 6em 4.5em 6em;
+
+
+        .links {
+            padding-left: 3.3em;
+
+
+            h3 {
+                padding-bottom: 1.2em;
+
+            }
+
+            ul {
+
+                li {
+                    padding: 1.4em 1.9em 1.4em 1em;
+                }
+            }
+
+            a {
+                font-size: 1.2em;
+            }
+
+            p {
+                padding-top: 2.4em;
+            }
+        }
+    }
+
+
+}
+
+@media only screen and (max-width :1200px) {
+
+    nav {
+        padding-left: 4em;
+
+        ul li {
+            padding: 4em 3em 4em 0;
+        }
+    }
+
+    .headerWrapper {
+        padding-right: 0;
+
+        img {
+            max-width: 80%;
+        }
+
+        .headerTravel {
+            h1 {
+                font-size: 2.6em;
+            }
+
+            p {
+                font-size: 1.2em;
+            }
+
+
+        }
+    }
+
+
+    .mainDescription {
+        background-size: auto;
+    }
+
+    .airplane {
+
+        h1 {
+            width: 8em;
+        }
+    }
+
+    .mountains {
+        padding: 8em 5em 3.3em 5em;
+
+        .mainImgWrapper {
+            padding-left: 0;
+        }
+    }
+
+    .mountainDescription {
+        padding-bottom: 2em;
+        padding-top: 2em;
+
+        h1 {
+            font-size: 1.7em;
+        }
+
+        p {
+            font-size: 1em;
+        }
+    }
+
+    .tabsSection {
+        padding: 7em 4em;
+    }
+
+    .tabsDescription {
+        margin-right: 3em;
+    }
+
+
+    .plusList {
+        padding: 6em 1em;
+
+        .plusdescription {
+            h1 {
+                max-width: 20em;
+            }
+        }
+    }
+
+    .formWrapper {
+        padding: 4.3em 7em 13em 7em;
+    }
+
+    .formAndTitle {
+
+        h1 {
+            font-size: 2.8em;
+            padding-bottom: 0.8em;
+
+        }
+
+        input::placeholder {
+            font-size: 1.2em;
+        }
+
+        input {
+            margin: 10px;
+            height: 50px;
+            width: 380px;
+        }
+
+        textarea {
+            margin: 10px;
+            width: 380px;
+            padding-top: 1.5em;
+        }
+
+        textarea::placeholder {
+            font-size: 1.2em;
+        }
+
+        .subBtn {
+            padding-top: 1.2em;
+        }
+    }
+
+    .quickLinks {
+        display: flex;
+        flex-direction: column;
+        padding: 7.5em 7.5em 5em 7.5em;
+        text-align: center;
+
+        h1 {
+            padding-bottom: 1.5em;
+        }
+
+        .links {
+            flex-direction: column;
+            justify-content: space-between;
+            padding-left: 0;
+            text-align: center;
+
+            .link {
+                justify-content: center;
+            }
+
+
+            ul {
+
+                padding-right: 0;
+
+                li {
+                    padding: 1.5em 2em 1.5em 2em;
+                }
+            }
+        }
+    }
+
+}
+
+@media only screen and (max-width :1060px) {
+
+    nav .contactButton {
+        button {
+            font-size: 1em;
+
+        }
+    }
+
+
+    .headerWrapper {
+        @include flex;
+        flex-direction: column-reverse;
+        padding: 1em 1em 5em 1em;
+
+        img {
+            max-width: 100%;
+        }
+
+        .headerTravel {
+            width: 80%;
+            align-items: center;
+            text-align: center;
+            padding-top: 2em;
+            padding-right: 0;
+        }
+    }
+
+    .mainDescription {
+        .mainDescriptionWrapper {
+            padding: 2em;
+            width: 70%;
+
+            h1 {
+                font-size: 3em;
+            }
+
+            p {
+                font-size: 1.2em;
+
+            }
+        }
+    }
+
+    .offers {
+        padding: 70px 0;
+
+        .offer {
+
+            h1 {
+                width: 230px;
+                font-size: 2.1em;
+                padding-bottom: 35px;
+            }
+
+            p {
+                font-size: 1.2em;
+            }
+        }
+    }
+
+    .airplane {
+        background-position-x: 0;
+    }
+
+    .mountains {
+        padding: 7em 4em 3.3em 4em;
+
+        .mainImgWrapper {
+            width: 50%;
+            padding-left: 1em;
+        }
+    }
+
+    .mountainDescription {
+        flex-direction: column;
+        padding-top: 2em;
+
+        h1 {
+            max-width: 400px;
+            font-size: 2em;
+        }
+
+        p {
+            font-size: 1.1em;
+        }
+    }
+
+    .descriptionDetails {
+        max-width: 400px;
+        padding-left: 0;
+        padding-top: 1em;
+    }
+
+    .tabsSection {
+        flex-direction: column;
+
+    }
+
+    .tabsDescription {
+        max-width: 70%;
+        margin: auto;
+        padding-right: 0;
+
+        .descTop {
+            padding-bottom: 2em;
+        }
+
+        h1 {
+            padding-bottom: 40px
+        }
+
+        h1,
+        h3 {
+            text-align: center;
+        }
+    }
+
+    .tabsPart {
+        height: 35em;
+        margin: auto;
+        margin-top: 7em;
+    }
+
+    .plusList {
+        @include flex;
+        flex-direction: column-reverse;
+        padding: 6em 0;
+        text-align: center;
+
+        img {
+            padding-bottom: 3em;
+        }
+
+        .plusdescription {
+
+            h1 {
+                padding-bottom: 100px;
+                font-size: 2.5em
+            }
+        }
+
+    }
+
+    .line {
+        width: 750px;
+    }
+
+
+    .customersWrapper {
+        background-size: auto;
+        background-position: centar;
+
+        .customers {
+            flex-wrap: wrap;
+            padding: 0 0 6em 0;
+
+            .customer {
+                width: 40%;
+            }
+        }
+
+        .customersTitle {
+
+            max-width: 40%;
+        }
+
+
+    }
+
+    .formWrapper {
+        padding: 4.3em 3em 10em 3em;
+    }
+
+    .formAndTitle {
+
+        h1 {
+            font-size: 2.6em;
+            padding-bottom: 0.7em;
+
+        }
+
+        input::placeholder {
+            font-size: 1.1em;
+        }
+
+        input {
+            margin: 9px;
+            height: 45px;
+            width: 350px;
+        }
+
+        textarea {
+            margin: 9px;
+            width: 350px;
+        }
+
+        textarea::placeholder {
+            font-size: 1.2em;
+        }
+
+        .subBtn {
+            padding-top: 1.2em;
+        }
+    }
+
+    .quickLinks {
+        padding: 7em 1em 7em 1em;
+    }
+
+}
+
+@media only screen and (max-width :850px) {
+    .mountains {
+        @include flex;
+        flex-direction: column;
+        padding: 7em 3em 3.3em 3em;
+
+
+        .mainImgWrapper {
+            display: none;
+        }
+
+        .mountain {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            padding-left: 0;
+            padding-top: 2em;
+
+            .smallMountainImg {
+                display: flex;
+                justify-content: center;
+
+            }
+        }
+    }
+
+    .mountainDescription {
+        display: flex;
+        flex-direction: row;
+        padding-top: 2em;
+
+        h1 {
+            max-width: 50%;
+            font-size: 2em;
+        }
+
+
+        p {
+            font-size: 1em;
+        }
+    }
+
+    .descriptionDetails {
+        padding-left: 1em;
+    }
+
+
+
+    .line {
+        width: 600px;
+    }
+
+    .plusdescription {
+        @include flex;
+        flex-direction: column;
+
+        h1 {
+            max-width: 10em;
+        }
+    }
+
+    .customersWrapper {
+        background-image: none;
+
+        .customersTitle {
+            max-width: 60%;
+        }
+
+        .customers {
+            .customer {
+                width: 50%;
+            }
+        }
+    }
+
+    .formWrapper {
+        display: flex;
+        flex-direction: column-reverse;
+
+        .formImg {
+            padding-left: 0;
+            max-width: 70%;
+
+        }
+    }
+
+    .formAndTitle {
+
+        h1 {
+            font-size: 3em;
+            padding-top: 2em;
+        }
+
+        input::placeholder {
+            font-size: 1.3em;
+        }
+
+        input {
+            margin: 13px;
+            height: 60px;
+            width: 450px;
+        }
+
+        textarea {
+            margin: 13px;
+            width: 450px;
+            padding-left: 1.3em;
+            padding-top: 2em;
+        }
+
+        textarea::placeholder {
+            font-size: 1.3em;
+        }
+
+
+        .subBtn {
+            padding-top: 1.5em;
+
+            input {
+                font-size: 1.4em;
+            }
+        }
+    }
+
+
+}
+
+
+
+@media only screen and (max-width :680px) {
+
+    .headerWrapper {
+
+        .headerTravel {
+
+            h1 {
+                font-size: 2.7em;
+            }
+
+            p {
+                font-size: 1.1em;
+            }
+
+        }
+    }
+
+    nav {
+        padding-left: 1em;
+        display: flex;
+        flex-direction: column;
+
+        .contactButton {
+            margin-left: 0;
+        }
+
+        ul {
+            li {
+                padding: 4em 2em 2em 0;
+            }
+        }
+
+        .contactButton button {
+            margin-bottom: 2em;
+            margin-right: 1em;
+        }
+    }
+
+    .mainDescription {
+        .mainDescriptionWrapper {
+            width: 90%;
+
+            h1 {
+                font-size: 2.7em;
+            }
+
+            p {
+                font-size: 1.1em;
+
+            }
+        }
+    }
+
+    .offers {
+        padding: 70px 0;
+
+        .offer {
+            margin: 25px;
+        }
+
+        h1 {
+            width: 230px;
+            font-size: 2em;
+            padding-bottom: 30px;
+        }
+
+        p {
+            font-size: 1.2em;
+        }
+    }
+
+    .airplane {
+        background-position-x: -4em;
+
+        h1 {
+            font-size: 3em;
+            text-align: center;
+        }
+
+        p {
+            font-size: 1.2em;
+            padding: 0 2em;
+            text-align: center;
+        }
+    }
+
+    .mountainDescription {
+        flex-direction: column;
+
+        h1 {
+            max-width: 100%;
+            text-align: center;
+        }
+
+        .descriptionDetails {
+            max-width: 100%;
+            text-align: justify;
+            padding-left: 0;
+            padding-top: 2em;
+        }
+    }
+
+    .tabsSection {
+        padding: 6em 0;
+
+        .tabs {
+            width: 20em;
+            justify-content: space-around;
+
+            li {
+                font-size: 1.4em
+            }
+        }
+    }
+
+    .line {
+        width: 500px;
+    }
+
+    .plusList {
+
+        img {
+            padding-left: 0;
+        }
+
+        .plusdescription {
+
+            .line {
+                width: 350px;
+                align-items: center;
+
+                .plus {
+                    padding-left: 1em;
+                }
+            }
+
+            h1 {
+                font-size: 2em;
+                padding-bottom: 2em;
+            }
+        }
+    }
+
+    .customersWrapper {
+        background-image: none;
+
+        .customersTitle {
+            max-width: 70%;
+        }
+
+        .customers {
+            .customer {
+                width: 70%;
+            }
+        }
+    }
+
+
+    .formWrapper {
+
+        .formImg {
+
+            max-width: 90%;
+
+        }
+    }
+
+    .formAndTitle {
+
+        h1 {
+            font-size: 2.5em;
+            padding-top: 1.5em;
+        }
+
+        input::placeholder {
+            font-size: 1.2em;
+        }
+
+        input {
+            margin: 12px;
+            height: 55px;
+            width: 375px;
+        }
+
+        textarea {
+            margin: 12px;
+            width: 375px;
+            padding-left: 1.3em;
+            padding-top: 2em;
+        }
+
+
+    }
+
+    .quickLinks {
+        .links {
+            .link {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
+
+
+}
+
+@media only screen and (max-width :400px) {
+    nav {
+        padding-left: 0;
+
+        ul {
+            li {
+                padding: 4em 1em 2em 0;
+
+                a {
+                    font-size: 1.2em;
+                }
+            }
+        }
+    }
+
+    .headerWrapper {
+
+        .headerTravel {
+            h1 {
+                font-size: 2em;
+            }
+
+            p {
+                font-size: 1em;
+            }
+
+
+        }
+    }
+
+    .mainDescription {
+        .mainDescriptionWrapper {
+            width: 100%;
+
+        }
+    }
+
+    .offers {
+
+        .offer {
+
+            h1 {
+                width: 230px;
+                font-size: 1.8em;
+                padding-bottom: 30px;
+                padding-left: 1em;
+
+
+            }
+
+            p {
+                font-size: 1em;
+                padding: 0 1em;
+            }
+        }
+    }
+
+    .airplane {
+        h1 {
+            font-size: 2.5em;
+        }
+    }
+
+    .customersWrapper {
+        .customers {
+            .customer {
+                width: 90%;
+
+                h4 {
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    .formAndTitle {
+
+        h1 {
+            font-size: 2.3em;
+        }
+
+        input::placeholder {
+            font-size: 1em;
+        }
+
+        input {
+            margin: 10px;
+            height: 40px;
+            width: 250px;
+        }
+
+        textarea {
+            margin: 10px;
+            width: 250px;
+            padding-left: 1.1em;
+            padding-top: 1.5em;
+            font-size: 1em;
+        }
+
+
+        .subBtn {
+            padding-top: 1.5em;
+            text-align: center;
+            width: 250px;
+
+            input {
+                font-size: 1.3em;
+                width: 250px;
+                padding-left: 0;
+            }
+        }
+    }
+}

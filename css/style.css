@@ -1,0 +1,1277 @@
+@font-face {
+  font-family: "roboto";
+  src: url(../fonts/Roboto-Regular.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: roboto;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #e9e7e7;
+}
+nav ul {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  padding-left: 4.3em;
+}
+nav ul .home a {
+  color: black;
+  font-weight: bold;
+}
+nav ul li {
+  padding: 4em;
+}
+nav ul li:not(:first-child):hover a {
+  text-decoration: underline;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #515155;
+  font-size: 1.5em;
+}
+nav .contactButton {
+  margin-left: auto;
+}
+nav .contactButton button {
+  position: relative;
+  padding: 1.5em 2em;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 1.2em;
+  margin-right: 8em;
+}
+nav .contactButton .btn::after,
+nav .contactButton .btn::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 25%;
+  height: 25%;
+  border: 2px solid;
+  transition: all 0.7s ease;
+  border-radius: 2px;
+}
+nav .contactButton button.btn::after {
+  bottom: 0;
+  right: 0;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-bottom-color: #566473;
+  border-right-color: #566473;
+}
+nav .contactButton button.btn::before {
+  top: 0;
+  left: 0;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+  border-top-color: #566473;
+  border-left-color: #566473;
+}
+nav .contactButton button.btn:hover:after,
+nav .contactButton button.btn:hover:before {
+  width: 100%;
+  height: 100%;
+}
+nav .contactButton button.btn {
+  color: #1d7765;
+}
+
+.headerWrapper {
+  background-image: url(../images/Scribble\ Dark\ header.png);
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-position-y: bottom;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 3em 8em 5em 8em;
+  background-color: #e9e7e7;
+}
+.headerWrapper img {
+  max-width: 100%;
+}
+.headerWrapper .headerTravel {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.headerWrapper .headerTravel h1 {
+  font-size: 4.2em;
+  color: #232323;
+}
+.headerWrapper .headerTravel p {
+  font-size: 1.5em;
+}
+.headerWrapper .headerTravel .reserveBtn {
+  height: 3em;
+  width: 12em;
+  background-color: #232323;
+  color: #e9e7e7;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  font-weight: bold;
+  transition: ease-out 0.4s;
+}
+.headerWrapper .headerTravel .reserveBtn:hover {
+  cursor: pointer;
+  color: #d1af64;
+}
+
+.mainDescription {
+  background-image: url(../images/Scribble\ Light\ main.png);
+  background-color: #232323;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.mainDescription .mainDescriptionWrapper {
+  width: 50%;
+  margin: auto;
+  text-align: center;
+  padding: 2.5em;
+}
+.mainDescription .mainDescriptionWrapper h1 {
+  color: #e9e7e7;
+  font-size: 3.5em;
+}
+.mainDescription .mainDescriptionWrapper p {
+  color: #e9e7e7;
+  padding: 2em;
+  font-size: 1.3em;
+}
+.mainDescription .mainDescriptionWrapper button {
+  height: 3em;
+  width: 12em;
+  background-color: #232323;
+  color: #e9e7e7;
+  border-radius: 0.5em;
+  border: 3px solid #e9e7e7;
+  font-size: 1em;
+  font-weight: bold;
+  transition: ease-out 0.4s;
+}
+.mainDescription .mainDescriptionWrapper button:hover {
+  cursor: pointer;
+  color: #d1af64;
+  border: 3px solid #d1af64;
+}
+
+.offers {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-image: url(../images/Scribble\ Dark\ main.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #e9e7e7;
+  padding: 140px 0;
+}
+.offers img {
+  transition: 1s ease;
+}
+.offers img:hover {
+  transform: scale(1.1);
+}
+.offers .underline {
+  background-color: #232323;
+  height: 3px;
+  width: 50px;
+  margin: 35px 0;
+}
+.offers .offer {
+  max-width: 370px;
+  margin: 30px;
+}
+.offers h1 {
+  width: 230px;
+  font-size: 2.2em;
+  padding-bottom: 40px;
+}
+.offers p {
+  font-size: 1.3em;
+  text-align: justify;
+}
+
+.airplane {
+  background-image: url(../images/Scribble\ Dark\ airplane.png);
+  background-repeat: no-repeat;
+  background-position-y: bottom;
+  background-position-x: 5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 15em 0 7em 0;
+  background-color: #e9e7e7;
+}
+.airplane img {
+  padding-bottom: 2.5em;
+  position: relative;
+  animation: fly 5s ease-in-out infinite;
+}
+@keyframes fly {
+  0% {
+    top: 0px;
+  }
+  50% {
+    top: -100px;
+  }
+  100% {
+    to: 0px;
+  }
+}
+.airplane h1 {
+  font-size: 4em;
+  padding-bottom: 2em;
+}
+.airplane h1 span {
+  border-bottom: 4px solid black;
+}
+.airplane p {
+  font-size: 1.4em;
+  font-weight: 900;
+}
+
+.arrow {
+  width: 100px;
+  height: 30px;
+  display: flex;
+  align-self: flex-end;
+  padding-top: 0.2em;
+}
+
+.arrow:before {
+  content: "";
+  background: currentColor;
+  width: 15px;
+  clip-path: polygon(0 10px, calc(100% - 15px) 10px, calc(100% - 15px) 0, 100% 50%, calc(100% - 15px) 100%, calc(100% - 15px) calc(100% - 10px), 0 calc(100% - 10px));
+  animation: moveArrow 1.8s infinite linear;
+}
+
+@keyframes moveArrow {
+  90%, 100% {
+    flex-grow: 1;
+  }
+}
+.mountains {
+  display: flex;
+  flex-direction: row;
+  padding: 9em 7.3em 3.3em 5.4em;
+  background-color: #c4c4c4;
+}
+.mountains .mainImgWrapper {
+  width: 50%;
+  padding-left: 4em;
+}
+.mountains .mainImgWrapper .mainMountainImg {
+  max-width: 100%;
+}
+.mountains .mountain {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding-left: 2em;
+}
+.mountains .mountain .smallMountainImg img {
+  max-width: 100%;
+}
+
+.mountainDescription {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 2em;
+  padding-top: 4.6em;
+}
+.mountainDescription h1 {
+  max-width: 230px;
+  font-size: 2.3em;
+  text-decoration: underline;
+}
+.mountainDescription .textTop {
+  padding-bottom: 1em;
+}
+.mountainDescription p {
+  font-size: 1.1em;
+}
+
+.descriptionDetails {
+  max-width: 370px;
+  padding-left: 50px;
+  text-align: justify;
+}
+
+.tabsSection {
+  display: flex;
+  flex-direction: row;
+  padding: 10em 7em;
+  background-color: #e9e7e7;
+}
+.tabsSection .tabs {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 2em;
+  width: 30em;
+  padding-top: 2em;
+}
+.tabsSection .tabs li {
+  font-size: 2em;
+  font-weight: bold;
+  color: #e9e7e7;
+  cursor: pointer;
+  position: relative;
+}
+.tabsSection .tabs li::after {
+  content: "";
+  position: absolute;
+  bottom: -20%;
+  left: -3%;
+  width: 0%;
+  height: 3px;
+  background: #e9e7e7;
+  border-radius: 30px;
+  transition: width 0.8s ease;
+}
+.tabsSection .tabs li.active::after {
+  width: 100%;
+}
+
+.container {
+  position: relative;
+}
+
+.content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+.content.active {
+  display: block;
+  padding-bottom: 1em;
+  background-color: #232323;
+  border-bottom-left-radius: 1.4em;
+  border-bottom-right-radius: 1.4em;
+}
+
+.content img {
+  width: 100%;
+  animation: fade 1s ease;
+}
+
+.content p {
+  font-size: 1.5rem;
+  text-align: center;
+  width: 70%;
+  color: #e9e7e7;
+  padding-top: 1.5em;
+  margin: auto;
+}
+
+.tabsPart {
+  background-color: #232323;
+  border-radius: 1.4em;
+}
+
+.tabsDescription {
+  max-width: 40%;
+  padding-right: 6em;
+  margin-right: 10em;
+  color: #232323;
+}
+.tabsDescription h1 {
+  padding-bottom: 80px;
+  font-size: 2.5em;
+}
+.tabsDescription h3 {
+  font-size: 2em;
+  padding-bottom: 0.7em;
+}
+.tabsDescription p {
+  font-size: 1.2em;
+  text-align: justify;
+}
+.tabsDescription .descTop {
+  padding-bottom: 1em;
+}
+
+.plusList {
+  display: flex;
+  flex-direction: row;
+  padding: 7em;
+  justify-content: space-around;
+}
+.plusList img {
+  max-width: 100%;
+}
+.plusList .plusdescription h1 {
+  padding-bottom: 100px;
+  font-size: 3em;
+}
+
+.line {
+  display: flex;
+  flex-direction: row;
+  width: 750px;
+  justify-content: space-between;
+  border-top: 2px solid black;
+  padding: 1.3em;
+  font-size: 1.1em;
+  transition: 0.2s;
+}
+.line:hover {
+  background-color: #c4c4c4;
+}
+.line .plus {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.lastLine {
+  border-bottom: 2px solid black;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@media only screen and (max-width: 1500px) {
+  nav ul {
+    padding-left: 0;
+  }
+  .headerWrapper {
+    padding-left: 5em;
+  }
+  .headerWrapper .headerTravel h1 {
+    font-size: 4em;
+  }
+  .mountainDescription {
+    padding-top: 4.4em;
+  }
+  .mountainDescription h1 {
+    font-size: 2.2em;
+  }
+  .mountainDescription p {
+    font-size: 1em;
+  }
+  .tabsDescription {
+    margin-right: 8em;
+  }
+  .plusList .plusdescription h1 {
+    padding-bottom: 90px;
+    max-width: 15em;
+    text-align: center;
+  }
+  .line {
+    width: 600px;
+  }
+}
+.customersWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-image: url(../images/customersBackground.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.customersWrapper .customersTitle {
+  max-width: 30%;
+  text-align: center;
+  margin: auto;
+  padding: 3.4em 0;
+  color: #232323;
+}
+.customersWrapper .customersTitle h1 {
+  font-size: 3em;
+}
+.customersWrapper .customers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  padding: 0 7em 6em 7em;
+}
+.customersWrapper .customers .customer {
+  width: 33%;
+  border: 2px solid #232323;
+  border-radius: 7px;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 4em 2em;
+  transition: 1s;
+}
+.customersWrapper .customers .customer:hover {
+  background-color: #c4c4c4;
+}
+.customersWrapper .customers .customer img {
+  padding-bottom: 40px;
+}
+.customersWrapper .customers .customer h4 {
+  padding-bottom: 30px;
+  font-size: 1.4em;
+}
+.customersWrapper .customers .customer p {
+  font-size: 1.2em;
+  text-align: center;
+}
+
+.formWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4.3em 10em 13em 10em;
+}
+.formWrapper .formImg {
+  max-width: 50%;
+  padding-left: 2em;
+}
+.formWrapper .formImg img {
+  width: 100%;
+}
+
+.formAndTitle h1 {
+  font-size: 3em;
+  text-align: center;
+  padding-bottom: 1em;
+}
+.formAndTitle input::placeholder {
+  color: black;
+  font-size: 1.3em;
+}
+.formAndTitle input {
+  margin: 13px;
+  height: 60px;
+  width: 450px;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding-left: 1.3em;
+}
+.formAndTitle input:focus::placeholder {
+  color: transparent;
+}
+.formAndTitle textarea {
+  margin: 13px;
+  width: 450px;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding-left: 1.3em;
+  padding-top: 2em;
+}
+.formAndTitle textarea::placeholder {
+  color: black;
+  font-size: 1.3em;
+}
+.formAndTitle textarea:focus::placeholder {
+  color: transparent;
+}
+.formAndTitle .subBtn {
+  padding-top: 1.5em;
+}
+.formAndTitle .subBtn input {
+  background-color: #232323;
+  color: #e9e7e7;
+  border: none;
+  border-radius: 2px;
+  font-size: 1.4em;
+  padding-left: 0;
+}
+
+.quickLinks {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-image: url(../images/Scribble\ Dark\ Footer.png);
+  background-repeat: no-repeat;
+  background-position-y: bottom;
+  background-position-x: bottom;
+  padding: 7.5em 10em 5em 10em;
+  background-color: #c4c4c4;
+}
+.quickLinks h1 {
+  font-size: 3.5em;
+  color: #232323;
+}
+.quickLinks .links {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  justify-content: space-between;
+  padding-left: 3.5em;
+}
+.quickLinks .links .link {
+  display: flex;
+  flex-direction: row;
+}
+.quickLinks .links h3 {
+  font-size: 2.5em;
+  color: #232323;
+  padding-bottom: 1.5em;
+}
+.quickLinks .links ul {
+  list-style-type: none;
+  padding-right: 2em;
+}
+.quickLinks .links ul li {
+  padding: 1.5em 2em 1.5em 1em;
+}
+.quickLinks .links ul li:hover a {
+  color: #e9e7e7;
+}
+.quickLinks .links a {
+  text-decoration: none;
+  color: #232323;
+  font-size: 1.3em;
+}
+.quickLinks .links p {
+  font-size: 1.2em;
+  padding-top: 2.5em;
+  padding-left: 2em;
+}
+
+@media only screen and (max-width: 1350px) {
+  .headerWrapper .headerTravel {
+    padding-right: 2.5em;
+  }
+  .headerWrapper .headerTravel h1 {
+    font-size: 2.6;
+  }
+  .headerWrapper .headerTravel p {
+    font-size: 1.1em;
+    padding: 1em 0;
+  }
+  .offers {
+    background-repeat: repeat;
+    background-size: contain;
+  }
+  .airplane {
+    background-position-x: 4em;
+    padding: 10em 0 7em 0;
+  }
+  .mountainDescription {
+    padding-top: 4.3em;
+  }
+  .mountainDescription h1 {
+    font-size: 2em;
+  }
+  .mountainDescription p {
+    font-size: 1em;
+  }
+  .tabsDescription {
+    margin-right: 6em;
+  }
+  .plusList {
+    padding: 6em;
+  }
+  .plusList img {
+    padding-left: 1em;
+  }
+  .plusList .plusdescription h1 {
+    padding-bottom: 70px;
+    font-size: 2em;
+    text-align: center;
+  }
+  .line {
+    width: 500px;
+  }
+  .formAndTitle h1 {
+    font-size: 2.9em;
+    padding-bottom: 0.9em;
+  }
+  .formAndTitle input {
+    width: 400px;
+  }
+  .formAndTitle textarea {
+    width: 400px;
+  }
+  .quickLinks {
+    padding: 5em 6em 4.5em 6em;
+  }
+  .quickLinks .links {
+    padding-left: 3.3em;
+  }
+  .quickLinks .links h3 {
+    padding-bottom: 1.2em;
+  }
+  .quickLinks .links ul li {
+    padding: 1.4em 1.9em 1.4em 1em;
+  }
+  .quickLinks .links a {
+    font-size: 1.2em;
+  }
+  .quickLinks .links p {
+    padding-top: 2.4em;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  nav {
+    padding-left: 4em;
+  }
+  nav ul li {
+    padding: 4em 3em 4em 0;
+  }
+  .headerWrapper {
+    padding-right: 0;
+  }
+  .headerWrapper img {
+    max-width: 80%;
+  }
+  .headerWrapper .headerTravel h1 {
+    font-size: 2.6em;
+  }
+  .headerWrapper .headerTravel p {
+    font-size: 1.2em;
+  }
+  .mainDescription {
+    background-size: auto;
+  }
+  .airplane h1 {
+    width: 8em;
+  }
+  .mountains {
+    padding: 8em 5em 3.3em 5em;
+  }
+  .mountains .mainImgWrapper {
+    padding-left: 0;
+  }
+  .mountainDescription {
+    padding-bottom: 2em;
+    padding-top: 2em;
+  }
+  .mountainDescription h1 {
+    font-size: 1.7em;
+  }
+  .mountainDescription p {
+    font-size: 1em;
+  }
+  .tabsSection {
+    padding: 7em 4em;
+  }
+  .tabsDescription {
+    margin-right: 3em;
+  }
+  .plusList {
+    padding: 6em 1em;
+  }
+  .plusList .plusdescription h1 {
+    max-width: 20em;
+  }
+  .formWrapper {
+    padding: 4.3em 7em 13em 7em;
+  }
+  .formAndTitle h1 {
+    font-size: 2.8em;
+    padding-bottom: 0.8em;
+  }
+  .formAndTitle input::placeholder {
+    font-size: 1.2em;
+  }
+  .formAndTitle input {
+    margin: 10px;
+    height: 50px;
+    width: 380px;
+  }
+  .formAndTitle textarea {
+    margin: 10px;
+    width: 380px;
+    padding-top: 1.5em;
+  }
+  .formAndTitle textarea::placeholder {
+    font-size: 1.2em;
+  }
+  .formAndTitle .subBtn {
+    padding-top: 1.2em;
+  }
+  .quickLinks {
+    display: flex;
+    flex-direction: column;
+    padding: 7.5em 7.5em 5em 7.5em;
+    text-align: center;
+  }
+  .quickLinks h1 {
+    padding-bottom: 1.5em;
+  }
+  .quickLinks .links {
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 0;
+    text-align: center;
+  }
+  .quickLinks .links .link {
+    justify-content: center;
+  }
+  .quickLinks .links ul {
+    padding-right: 0;
+  }
+  .quickLinks .links ul li {
+    padding: 1.5em 2em 1.5em 2em;
+  }
+}
+@media only screen and (max-width: 1060px) {
+  nav .contactButton button {
+    font-size: 1em;
+  }
+  .headerWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+    padding: 1em 1em 5em 1em;
+  }
+  .headerWrapper img {
+    max-width: 100%;
+  }
+  .headerWrapper .headerTravel {
+    width: 80%;
+    align-items: center;
+    text-align: center;
+    padding-top: 2em;
+    padding-right: 0;
+  }
+  .mainDescription .mainDescriptionWrapper {
+    padding: 2em;
+    width: 70%;
+  }
+  .mainDescription .mainDescriptionWrapper h1 {
+    font-size: 3em;
+  }
+  .mainDescription .mainDescriptionWrapper p {
+    font-size: 1.2em;
+  }
+  .offers {
+    padding: 70px 0;
+  }
+  .offers .offer h1 {
+    width: 230px;
+    font-size: 2.1em;
+    padding-bottom: 35px;
+  }
+  .offers .offer p {
+    font-size: 1.2em;
+  }
+  .airplane {
+    background-position-x: 0;
+  }
+  .mountains {
+    padding: 7em 4em 3.3em 4em;
+  }
+  .mountains .mainImgWrapper {
+    width: 50%;
+    padding-left: 1em;
+  }
+  .mountainDescription {
+    flex-direction: column;
+    padding-top: 2em;
+  }
+  .mountainDescription h1 {
+    max-width: 400px;
+    font-size: 2em;
+  }
+  .mountainDescription p {
+    font-size: 1.1em;
+  }
+  .descriptionDetails {
+    max-width: 400px;
+    padding-left: 0;
+    padding-top: 1em;
+  }
+  .tabsSection {
+    flex-direction: column;
+  }
+  .tabsDescription {
+    max-width: 70%;
+    margin: auto;
+    padding-right: 0;
+  }
+  .tabsDescription .descTop {
+    padding-bottom: 2em;
+  }
+  .tabsDescription h1 {
+    padding-bottom: 40px;
+  }
+  .tabsDescription h1,
+.tabsDescription h3 {
+    text-align: center;
+  }
+  .tabsPart {
+    height: 35em;
+    margin: auto;
+    margin-top: 7em;
+  }
+  .plusList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+    padding: 6em 0;
+    text-align: center;
+  }
+  .plusList img {
+    padding-bottom: 3em;
+  }
+  .plusList .plusdescription h1 {
+    padding-bottom: 100px;
+    font-size: 2.5em;
+  }
+  .line {
+    width: 750px;
+  }
+  .customersWrapper {
+    background-size: auto;
+    background-position: centar;
+  }
+  .customersWrapper .customers {
+    flex-wrap: wrap;
+    padding: 0 0 6em 0;
+  }
+  .customersWrapper .customers .customer {
+    width: 40%;
+  }
+  .customersWrapper .customersTitle {
+    max-width: 40%;
+  }
+  .formWrapper {
+    padding: 4.3em 3em 10em 3em;
+  }
+  .formAndTitle h1 {
+    font-size: 2.6em;
+    padding-bottom: 0.7em;
+  }
+  .formAndTitle input::placeholder {
+    font-size: 1.1em;
+  }
+  .formAndTitle input {
+    margin: 9px;
+    height: 45px;
+    width: 350px;
+  }
+  .formAndTitle textarea {
+    margin: 9px;
+    width: 350px;
+  }
+  .formAndTitle textarea::placeholder {
+    font-size: 1.2em;
+  }
+  .formAndTitle .subBtn {
+    padding-top: 1.2em;
+  }
+  .quickLinks {
+    padding: 7em 1em 7em 1em;
+  }
+}
+@media only screen and (max-width: 850px) {
+  .mountains {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 7em 3em 3.3em 3em;
+  }
+  .mountains .mainImgWrapper {
+    display: none;
+  }
+  .mountains .mountain {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-left: 0;
+    padding-top: 2em;
+  }
+  .mountains .mountain .smallMountainImg {
+    display: flex;
+    justify-content: center;
+  }
+  .mountainDescription {
+    display: flex;
+    flex-direction: row;
+    padding-top: 2em;
+  }
+  .mountainDescription h1 {
+    max-width: 50%;
+    font-size: 2em;
+  }
+  .mountainDescription p {
+    font-size: 1em;
+  }
+  .descriptionDetails {
+    padding-left: 1em;
+  }
+  .line {
+    width: 600px;
+  }
+  .plusdescription {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .plusdescription h1 {
+    max-width: 10em;
+  }
+  .customersWrapper {
+    background-image: none;
+  }
+  .customersWrapper .customersTitle {
+    max-width: 60%;
+  }
+  .customersWrapper .customers .customer {
+    width: 50%;
+  }
+  .formWrapper {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .formWrapper .formImg {
+    padding-left: 0;
+    max-width: 70%;
+  }
+  .formAndTitle h1 {
+    font-size: 3em;
+    padding-top: 2em;
+  }
+  .formAndTitle input::placeholder {
+    font-size: 1.3em;
+  }
+  .formAndTitle input {
+    margin: 13px;
+    height: 60px;
+    width: 450px;
+  }
+  .formAndTitle textarea {
+    margin: 13px;
+    width: 450px;
+    padding-left: 1.3em;
+    padding-top: 2em;
+  }
+  .formAndTitle textarea::placeholder {
+    font-size: 1.3em;
+  }
+  .formAndTitle .subBtn {
+    padding-top: 1.5em;
+  }
+  .formAndTitle .subBtn input {
+    font-size: 1.4em;
+  }
+}
+@media only screen and (max-width: 680px) {
+  .headerWrapper .headerTravel h1 {
+    font-size: 2.7em;
+  }
+  .headerWrapper .headerTravel p {
+    font-size: 1.1em;
+  }
+  nav {
+    padding-left: 1em;
+    display: flex;
+    flex-direction: column;
+  }
+  nav .contactButton {
+    margin-left: 0;
+  }
+  nav ul li {
+    padding: 4em 2em 2em 0;
+  }
+  nav .contactButton button {
+    margin-bottom: 2em;
+    margin-right: 1em;
+  }
+  .mainDescription .mainDescriptionWrapper {
+    width: 90%;
+  }
+  .mainDescription .mainDescriptionWrapper h1 {
+    font-size: 2.7em;
+  }
+  .mainDescription .mainDescriptionWrapper p {
+    font-size: 1.1em;
+  }
+  .offers {
+    padding: 70px 0;
+  }
+  .offers .offer {
+    margin: 25px;
+  }
+  .offers h1 {
+    width: 230px;
+    font-size: 2em;
+    padding-bottom: 30px;
+  }
+  .offers p {
+    font-size: 1.2em;
+  }
+  .airplane {
+    background-position-x: -4em;
+  }
+  .airplane h1 {
+    font-size: 3em;
+    text-align: center;
+  }
+  .airplane p {
+    font-size: 1.2em;
+    padding: 0 2em;
+    text-align: center;
+  }
+  .mountainDescription {
+    flex-direction: column;
+  }
+  .mountainDescription h1 {
+    max-width: 100%;
+    text-align: center;
+  }
+  .mountainDescription .descriptionDetails {
+    max-width: 100%;
+    text-align: justify;
+    padding-left: 0;
+    padding-top: 2em;
+  }
+  .tabsSection {
+    padding: 6em 0;
+  }
+  .tabsSection .tabs {
+    width: 20em;
+    justify-content: space-around;
+  }
+  .tabsSection .tabs li {
+    font-size: 1.4em;
+  }
+  .line {
+    width: 500px;
+  }
+  .plusList img {
+    padding-left: 0;
+  }
+  .plusList .plusdescription .line {
+    width: 350px;
+    align-items: center;
+  }
+  .plusList .plusdescription .line .plus {
+    padding-left: 1em;
+  }
+  .plusList .plusdescription h1 {
+    font-size: 2em;
+    padding-bottom: 2em;
+  }
+  .customersWrapper {
+    background-image: none;
+  }
+  .customersWrapper .customersTitle {
+    max-width: 70%;
+  }
+  .customersWrapper .customers .customer {
+    width: 70%;
+  }
+  .formWrapper .formImg {
+    max-width: 90%;
+  }
+  .formAndTitle h1 {
+    font-size: 2.5em;
+    padding-top: 1.5em;
+  }
+  .formAndTitle input::placeholder {
+    font-size: 1.2em;
+  }
+  .formAndTitle input {
+    margin: 12px;
+    height: 55px;
+    width: 375px;
+  }
+  .formAndTitle textarea {
+    margin: 12px;
+    width: 375px;
+    padding-left: 1.3em;
+    padding-top: 2em;
+  }
+  .quickLinks .links .link {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 400px) {
+  nav {
+    padding-left: 0;
+  }
+  nav ul li {
+    padding: 4em 1em 2em 0;
+  }
+  nav ul li a {
+    font-size: 1.2em;
+  }
+  .headerWrapper .headerTravel h1 {
+    font-size: 2em;
+  }
+  .headerWrapper .headerTravel p {
+    font-size: 1em;
+  }
+  .mainDescription .mainDescriptionWrapper {
+    width: 100%;
+  }
+  .offers .offer h1 {
+    width: 230px;
+    font-size: 1.8em;
+    padding-bottom: 30px;
+    padding-left: 1em;
+  }
+  .offers .offer p {
+    font-size: 1em;
+    padding: 0 1em;
+  }
+  .airplane h1 {
+    font-size: 2.5em;
+  }
+  .customersWrapper .customers .customer {
+    width: 90%;
+  }
+  .customersWrapper .customers .customer h4 {
+    text-align: center;
+  }
+  .formAndTitle h1 {
+    font-size: 2.3em;
+  }
+  .formAndTitle input::placeholder {
+    font-size: 1em;
+  }
+  .formAndTitle input {
+    margin: 10px;
+    height: 40px;
+    width: 250px;
+  }
+  .formAndTitle textarea {
+    margin: 10px;
+    width: 250px;
+    padding-left: 1.1em;
+    padding-top: 1.5em;
+    font-size: 1em;
+  }
+  .formAndTitle .subBtn {
+    padding-top: 1.5em;
+    text-align: center;
+    width: 250px;
+  }
+  .formAndTitle .subBtn input {
+    font-size: 1.3em;
+    width: 250px;
+    padding-left: 0;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
